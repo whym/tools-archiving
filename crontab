@@ -20,16 +20,16 @@
 # For more information see the manual pages of crontab(5) and cron(8)
 #
 # Wikimedia Tool Labs specific note:
-#   Please be aware that *only* jsub and jstart are acceptable
+#   Please be aware that *only* jsub -quiet and jstart are acceptable
 #   commands to schedule via cron.  Any command specified here will
-#   be modified to be invoked through jsub unless it is one of
+#   be modified to be invoked through jsub -quiet unless it is one of
 #   the two.
 #
 HOME=/data/project/archiving 
 SGE_DEBUG_LEVEL="1 0 0 0 0 0 0 0"
 # m h  dom mon dow   command
- 45 07 *   *   *     jsub -once -j yes -o $HOME/public_html/logs/run_meta.txt   $HOME/local/bin/run_meta.sh 
- 05 08 *   *   *     jsub -once -j yes -o $HOME/public_html/logs/run_jawiki.txt $HOME/local/bin/run_jawiki.sh
- 10 08 *   *   *     jsub -once -j yes -o $HOME/public_html/logs/run_enwb.txt   $HOME/local/bin/run_enwb.sh 
- 25 08 2-30/3 * *    jsub -once -j yes -o $HOME/public_html/logs/run_envoy.txt  $HOME/local/bin/run_envoy.sh
- 45 23 *   *   *     jsub -once $HOME/local/bin/logrotate.sh 
+ 45 07 *   *   *     jsub -quiet -once -j yes -o $HOME/public_html/logs/run_meta.txt   run_meta.sh 
+ 05 08 *   *   *     jsub -quiet -once -j yes -o $HOME/public_html/logs/run_jawiki.txt run_jawiki.sh
+ 10 08 *   *   *     jsub -quiet -once -j yes -o $HOME/public_html/logs/run_enwb.txt   run_enwb.sh 
+ 25 08 2-30/3 * *    jsub -quiet -once -j yes -o $HOME/public_html/logs/run_envoy.txt  run_envoy.sh
+ 45 23 *   *   *     jsub -quiet -once logrotate.sh 
