@@ -1,0 +1,3 @@
+[submodule "pkgsrc/core"]
+	path = pkgsrc/core
+	url = https://gerrit.wikimedia.org/r/pywikibot/core.git
