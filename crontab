@@ -30,8 +30,8 @@ HOME=/data/project/archiving
 BASH_ENV=${HOME}/.bash_profile
 # SGE_DEBUG_LEVEL="1 0 0 0 0 0 0 0"
 # m h  dom mon dow   command
- 05 07 *   *   *     jsub -quiet -once -j yes -o $HOME/public_html/logs/run_commons.txt run_commons.sh
- 45 07 *   *   *     jsub -quiet -once -j yes -o $HOME/public_html/logs/run_meta.txt    run_meta.sh
+ 45 07 *   *   *     jsub -quiet -once -j yes -o $HOME/public_html/logs/run_commons.txt run_commons.sh
+ 55 07 *   *   *     jsub -quiet -once -j yes -o $HOME/public_html/logs/run_meta.txt    run_meta.sh
  05 08 *   *   *     jsub -quiet -once -j yes -o $HOME/public_html/logs/run_jawiki.txt  run_jawiki.sh
  10 08 *   *   *     jsub -quiet -once -j yes -o $HOME/public_html/logs/run_enwb.txt    run_enwb.sh
  25 08 2-30/3 * *    jsub -quiet -once -j yes -o $HOME/public_html/logs/run_envoy.txt   run_envoy.sh
