@@ -15,4 +15,4 @@ See crontab for periodically run commands &mdash; each line corresponds to a tar
 
 All accounts operated under http://tools.wmflabs.org/archiving/ should be attached to tools.archiving@tools.wmflabs.org.
 
-Optional: Use OAuth by following the procedures at <https://www.mediawiki.org/wiki/Manual:Pywikibot/OAuth>.
+Optional: Use OAuth by following the procedures at <https://www.mediawiki.org/wiki/Manual:Pywikibot/OAuth>. If you do this, grant "High-volume editing", "Edit existing pages" and "Create, edit, and move pages".
