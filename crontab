@@ -30,9 +30,10 @@ HOME=/data/project/archiving
 BASH_ENV=${HOME}/.bash_profile
 # SGE_DEBUG_LEVEL="1 0 0 0 0 0 0 0"
 # m h  dom mon dow   command
- 45 07 *   *   *     jsub -l release=trusty -quiet -once -j yes -o $HOME/public_html/logs/run_commons.txt run_commons.sh
- 55 07 *   *   *     jsub -l release=trusty -quiet -once -j yes -o $HOME/public_html/logs/run_meta.txt    run_meta.sh
- 05 08 *   *   *     jsub -l release=trusty -quiet -once -j yes -o $HOME/public_html/logs/run_jawiki.txt  run_jawiki.sh
- 10 08 *   *   *     jsub -l release=trusty -quiet -once -j yes -o $HOME/public_html/logs/run_enwb.txt    run_enwb.sh
- 25 08 2-30/3 * *    jsub -l release=trusty -quiet -once -j yes -o $HOME/public_html/logs/run_envoy.txt   run_envoy.sh
+ 45 07 *   *   *     jsub -quiet -once -j yes -o $HOME/public_html/logs/run_commons.txt run_commons.sh
+ 55 07 *   *   *     jsub -quiet -once -j yes -o $HOME/public_html/logs/run_meta.txt    run_meta.sh
+ 05 08 *   *   *     jsub -quiet -once -j yes -o $HOME/public_html/logs/run_jawiki.txt  run_jawiki.sh
+ 10 08 *   *   *     jsub -quiet -once -j yes -o $HOME/public_html/logs/run_enwb.txt    run_enwb.sh
+ 10 08 *   *   *     jsub -quiet -once -j yes -o $HOME/public_html/logs/run_eswv.txt    run_eswv.sh
+ 25 08 2-30/3 * *    jsub -quiet -once -j yes -o $HOME/public_html/logs/run_envoy.txt   run_envoy.sh
  45 23 *   *   *     jsub -quiet -once logrotate.sh 
