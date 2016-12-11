@@ -15,4 +15,4 @@ usernames['wikivoyage']['en'] = u'ArchiverBot'
 
 retry_wait = 1 
 
-
+console_encoding = 'utf8'

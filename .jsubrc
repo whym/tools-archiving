@@ -1,0 +1,4 @@
+-l release=trusty
+-j yes
+-once
+-quiet
