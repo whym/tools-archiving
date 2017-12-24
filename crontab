@@ -35,5 +35,6 @@ BASH_ENV=${HOME}/.bash_profile
  05 08 *   *   *     jsub -o $HOME/public_html/logs/run_jawiki.txt  run_jawiki.sh
  10 08 *   *   *     jsub -o $HOME/public_html/logs/run_enwb.txt    run_enwb.sh
  10 08 *   *   *     jsub -o $HOME/public_html/logs/run_eswv.txt    run_eswv.sh
+ 10 08 *   *   *     jsub -o $HOME/public_html/logs/run_nlwn.txt    run_nlwn.sh
  25 08 2-30/3 * *    jsub -o $HOME/public_html/logs/run_envoy.txt   run_envoy.sh
  45 23 *   *   *     jsub logrotate.sh
