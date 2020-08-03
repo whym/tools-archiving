@@ -7,7 +7,7 @@ http://tools.wmflabs.org/archiving/
 Notes to operators
 -------------------
 
-* This repository has submodules. Use ``git clone -r ssh://$YOUR_ACCOUNT@dev.tools.wmflabs.org/data/project/archiving/.git`` to clone.
+* This repository has submodules. Use ``git clone -r ssh://$YOUR_ACCOUNT@dev.toolforge.org/data/project/archiving/.git`` to clone.
 * See ``crontab`` for periodically run commands &mdash; each line corresponds to a target site. Run ``crontab ~/crontab`` after you update the file.
 * All accounts operated under http://tools.wmflabs.org/archiving/ should be attached to tools.archiving@tools.wmflabs.org.
 ** Optional: [Use OAuth](https://www.mediawiki.org/wiki/Manual:Pywikibot/OAuth). If you do this, grant "High-volume editing", "Edit existing pages" and "Create, edit, and move pages".
