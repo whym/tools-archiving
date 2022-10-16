@@ -30,11 +30,13 @@ HOME=/data/project/archiving
 BASH_ENV=${HOME}/.bash_profile
 # SGE_DEBUG_LEVEL="1 0 0 0 0 0 0 0"
 # m h  dom mon dow   command
- 45 07 *   *   *     jsub -o $HOME/public_html/logs/run_commons.txt -mem 1G run_commons.sh
- 55 07 *   *   *     jsub -o $HOME/public_html/logs/run_meta.txt    run_meta.sh
- 05 08 *   *   *     jsub -o $HOME/public_html/logs/run_jawiki.txt  run_jawiki.sh
- 10 08 *   *   *     jsub -o $HOME/public_html/logs/run_enwb.txt    run_enwb.sh
- 10 08 *   *   *     jsub -o $HOME/public_html/logs/run_eswv.txt    run_eswv.sh
- 10 08 *   *   *     jsub -o $HOME/public_html/logs/run_nlwn.txt    run_nlwn.sh
- 25 08 2-30/3 * *    jsub -o $HOME/public_html/logs/run_envoy.txt   run_envoy.sh
- 45 23 *   *   *     jsub logrotate.sh
+ 45 07 *   *   *     jsub -release buster -o $HOME/public_html/logs/run_commons.txt run_commons.sh
+ 55 07 *   *   *     jsub -release buster -o $HOME/public_html/logs/run_meta.txt    run_meta.sh
+ 05 08 *   *   *     jsub -release buster -o $HOME/public_html/logs/run_jawiki.txt  run_jawiki.sh
+ 10 08 *   *   *     jsub -release buster -o $HOME/public_html/logs/run_enwb.txt    run_enwb.sh
+ 10 08 *   *   *     jsub -release buster -o $HOME/public_html/logs/run_eswv.txt    run_eswv.sh
+ 10 08 *   *   *     jsub -release buster -o $HOME/public_html/logs/run_nlwn.txt    run_nlwn.sh
+ 25 08 2-30/3 * *    jsub -release buster -o $HOME/public_html/logs/run_envoy.txt   run_envoy.sh
+ 45 23 *   *   *     jsub -release buster logrotate.sh
+  0 10 *   *   *     jsub -N detect_missing -release buster -once -quiet /home/whym/detect_missing $HOME/detect_missing.toml
+
