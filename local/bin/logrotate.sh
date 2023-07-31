@@ -1,2 +1,2 @@
 #!/bin/sh
-/usr/sbin/logrotate $HOME/logrotate.conf -s $HOME/public_html/logs/logrotate.log
+/usr/sbin/logrotate $HOME/logrotate.conf -s $HOME/public_html/logs/logrotate.status

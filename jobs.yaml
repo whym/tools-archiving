@@ -1,0 +1,71 @@
+- name: arch-viwiki
+  image: tf-python39
+  command: "pyvenv/bin/python  pkgsrc/core/pwb.py archivebot -lang:vi -family:wikipedia -user:ArchiverBot Thành_viên:NgocAnMaster/ArchiverBot/config -dir:$HOME/.pywikibot -putthrottle:40"
+#  command: "pyvenv/bin/python  pkgsrc/core/pwb.py archivebot -lang:vi -family:wikipedia -user:ArchiverBot Thành_viên:NgocAnMaster/ArchiverBot/config -dir:$HOME/.pywikibot -putthrottle:40 -namespace:4 && pyvenv/bin/python  pkgsrc/core/pwb.py archivebot -lang:vi -family:wikipedia -user:ArchiverBot Thành_viên:NgocAnMaster/ArchiverBot/config -dir:$HOME/.pywikibot -putthrottle:40 -namespace:5 && pyvenv/bin/python  pkgsrc/core/pwb.py archivebot -lang:vi -family:wikipedia -user:ArchiverBot Thành_viên:NgocAnMaster/ArchiverBot/config -dir:$HOME/.pywikibot -putthrottle:40 -namespace:1"
+  schedule: "12 08 * * *"
+  filelog-stdout: public_html/logs/run_viwiki.txt
+  filelog-stderr: public_html/logs/run_viwiki.txt
+
+- name: arch-commons
+  image: tf-python39
+  command: "pyvenv/bin/python  pkgsrc/core/pwb.py archivebot -lang:commons -family:commons -user:ArchiverBot -dir:$HOME/.pywikibot -putthrottle:10 User:MiszaBot/config -sleep:2"
+  schedule: "45 07 * * *"
+  filelog-stdout: public_html/logs/run_commons.txt
+  filelog-stderr: public_html/logs/run_commons.txt
+
+- name: arch-metawiki
+  image: tf-python39
+  command: "pyvenv/bin/python  pkgsrc/core/pwb.py archivebot -lang:meta -family:meta -user:ArchiverBot -dir:$HOME/.pywikibot -putthrottle:10 User:MiszaBot/config -sleep:2"
+  schedule: "55 07 * * *"
+  filelog-stdout: public_html/logs/run_meta.txt
+  filelog-stderr: public_html/logs/run_meta.txt
+
+- name: arch-jawiki
+  image: tf-python39
+  command: "pyvenv/bin/python  pkgsrc/core/pwb.py archivebot -lang:ja -family:wikipedia -user:ArchiverBot -dir:$HOME/.pywikibot -putthrottle:60 User:ArchiverBot/config -sleep:2"
+  schedule: "05 08 * * *"
+  filelog-stdout: public_html/logs/run_jawiki.txt
+  filelog-stderr: public_html/logs/run_jawiki.txt
+
+- name: arch-enwb
+  image: tf-python39
+  command: "pyvenv/bin/python  pkgsrc/core/pwb.py archivebot -lang:en -family:wikibooks -user:ArchiverBot -dir:$HOME/.pywikibot -putthrottle:10 -salt:goldenretriever User:MiszaBot/config"
+  schedule: "10 08 * * *"
+  filelog-stdout: public_html/logs/run_enwb.txt
+  filelog-stderr: public_html/logs/run_enwb.txt
+
+- name: arch-eswv
+  image: tf-python39
+  command: "pyvenv/bin/python  pkgsrc/core/pwb.py archivebot -lang:es -family:wikiversity -user:ArchiverBot -dir:$HOME/.pywikibot -putthrottle:10 Plantilla:Archivar"
+  schedule: "10 08 * * *"
+  filelog-stdout: public_html/logs/run_eswv.txt
+  filelog-stderr: public_html/logs/run_eswv.txt
+
+- name: arch-nlwn
+  image: tf-python39
+  command: "pyvenv/bin/python  pkgsrc/core/pwb.py archivebot -lang:nl -family:wikinews -user:ArchiverBot -dir:$HOME/.pywikibot -putthrottle:10 Sjabloon:Archiveren"
+  schedule: "10 08 * * *"
+  filelog-stdout: public_html/logs/run_nlwn.txt
+  filelog-stderr: public_html/logs/run_nlwn.txt
+
+- name: arch-envoy
+  image: tf-python39
+  command: "pyvenv/bin/python  pkgsrc/core/pwb.py archivebot -lang:en -family:wikivoyage -user:ArchiverBot -dir:$HOME/.pywikibot -putthrottle:10 Template:Auto_archiving"
+  schedule: "25 08 3,6,9,12,15,18,21,24,27,30 * *"
+  filelog-stdout: public_html/logs/run_envoy.txt
+  filelog-stderr: public_html/logs/run_envoy.txt
+
+- name: arch-log
+  image: mariadb
+  command: "/usr/sbin/logrotate $HOME/logrotate.conf -s $HOME/public_html/logs/logrotate.status"
+  schedule: "45 23 * * *"
+
+- name: arch-log3
+  image: mariadb
+  command: "/usr/sbin/logrotate $HOME/logrotate2.conf -s $HOME/tmplog/logrotate.status"
+
+- name: arch-detect
+  image: bullseye
+  command: "~/detect_missing ~/detect_missing.toml"
+  schedule: "0 10 * * *"
+  emails: onfailure
