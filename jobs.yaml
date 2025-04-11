@@ -55,6 +55,13 @@
   filelog-stdout: public_html/logs/run_envoy.txt
   filelog-stderr: public_html/logs/run_envoy.txt
 
+- name: arch-mediawiki
+  image: tf-python39
+  command: "pyvenv/bin/python  pkgsrc/core/pwb.py archivebot -lang:mediawiki -family:mediawiki -user:ArchiverBot -dir:$HOME/.pywikibot -putthrottle:10 Template:Auto_archiving"
+  schedule: "20 09 * * *"
+  filelog-stdout: public_html/logs/run_mediawiki.txt
+  filelog-stderr: public_html/logs/run_mediawiki.txt
+
 - name: arch-log
   image: mariadb
   command: "/usr/sbin/logrotate $HOME/logrotate.conf -s $HOME/public_html/logs/logrotate.status"
